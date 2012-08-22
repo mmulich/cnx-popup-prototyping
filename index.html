@@ -13,12 +13,14 @@
 
   <meta name="viewport" content="width=device-width">
 
+  <!-- Bootstrap -->
+  <link href="static/css/bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="static/css/style.css">
 
   <script src="static/js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-  <header id="hud">
     <h1>Connexions</h1>
     <span id="tools-selection">Tools</span>
     <ul>
@@ -28,7 +30,6 @@
       <li>Sharing and Access Management</li>
       <li>Metadata</li>
     </ul>
-  </header>
   <div role="main">
     <form>
       <textarea name="content" rows="10" cols="50">
@@ -38,14 +39,20 @@
 <p>Drumstick flank ham hock, sint venison shankle shank pariatur occaecat ribeye veniam bresaola nostrud boudin ground round. In filet mignon in eiusmod, sausage laboris dolor brisket labore beef. Salami veniam bresaola sint meatball aute, beef ribs tail. Short loin magna jowl pariatur cillum id venison brisket occaecat pork belly.</p>
 <p>Sausage boudin est pork beef, in beef ribs aliquip spare ribs. Pariatur non reprehenderit commodo flank prosciutto beef duis ribeye turkey swine boudin tenderloin. Ball tip incididunt ad enim bacon rump, beef ribs ut tail pork chop non pork. Brisket in ex, duis bacon pork irure proident shankle in anim ham. Swine officia aute labore pork loin pancetta velit rump. Frankfurter dolor eiusmod qui officia consequat magna sirloin ea ex. Qui cupidatat minim jowl, ad occaecat exercitation est ball tip biltong nulla venison sunt sirloin.</p>
       </textarea>
-      <button type="submit" name="submit">Submit</button>
-      <button type="button" name="cancel">Cancel</button>
+      <button type="submit" name="submit"
+              class="btn btn-primary">Submit</button>
+      <button type="button" name="cancel"
+              class="btn">Cancel</button>
     </form>
   </div>
   <footer>No copyright, but keep you dirty paws off my stuph! ;)</footer>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="static/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+  <script>window.jQuery ||
+  document.write('<script src="static/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+
+  <!-- Bootstrap -->
+  <script src="static/js/libs/bootstrap.min.js"></script>
 
   <!-- scripts concatenated and minified via ant build script-->
   <script src="static/js/plugins.js"></script>
