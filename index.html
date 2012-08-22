@@ -21,15 +21,38 @@
   <script src="static/js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-    <h1>Connexions</h1>
-    <span id="tools-selection">Tools</span>
-    <ul>
-      <li>Import</li>
-      <li>Preview ...</li>
-      <li>Publish</li>
-      <li>Sharing and Access Management</li>
-      <li>Metadata</li>
-    </ul>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a href="" class="brand">Connexions</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="dropdown">
+              <!-- Don't use th edata-toggle attr here because the
+              tools dropdown doesn't link to a tools index. -->
+              <a id="tools-selection" href="#"
+                 class="dropdown-toggle"
+                 role="button">Tools<b class="caret"></b></span>
+              <ul class="dropdown-menu" role="menu">
+                <li><a tabindex="-1" href="#">Import</a></li>
+                <li><a tabindex="-1" href="#">Preview ...</a></li>
+                <li><a tabindex="-1" href="#">Publish</a></li>
+                <li><a tabindex="-1" href="#">Sharing and Access Management</a></li>
+                <li><a tabindex="-1" href="#">Metadata</a></li>
+              </ul>
+            </li>
+            <li><a href="/support">Support</a></li>
+          </ul>
+        </div>
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <div role="main">
     <form>
       <textarea name="content" rows="10" cols="50">
