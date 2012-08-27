@@ -18,10 +18,8 @@
   <link href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
   <link rel="stylesheet" href="static/css/style.css">
   <link rel="stylesheet" href="static/css/custom.css">
-  <link rel="stylesheet" href="Aloha-Editor/src/css/aloha.css" type="text/css">
 
   <script src="static/js/libs/modernizr-2.5.3.min.js"></script>
-  <script src="Aloha-Editor/src/lib/require.js"></script>
 </head>
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top">
@@ -48,7 +46,7 @@
                 <li><a tabindex="-1" href="#">Sharing and Access Management</a></li>
                 <li>
                   <a tabindex="-1" href="metadata.html"
-                     rel="#overlay">Metadata</a>
+                     class="overlay">Metadata</a>
                 </li>
               </ul>
             </li>
@@ -61,39 +59,11 @@
 
   <div role="main" class="container-fluid">
     <div class="row-fluid">
-      <form>
-        <div class="span8">
-          <textarea id="editable-content" name="content">
-<h1>Meatloaf lovers rejoice</h1>
-<p>Meatloaf proident ham hock exercitation excepteur. Occaecat nostrud adipisicing bresaola, strip steak flank laborum irure eiusmod. Capicola reprehenderit culpa swine t-bone spare ribs. Quis elit ut, short loin in excepteur do non swine aliqua ground round.</p>
-          </textarea>
-        </div>
-        <div class="span4">
-          <h3>Help info and sidebar tools go here</h3>
-          <ul>
-            <li>What type of meat is best for children?</li>
-            <li>What does the mystery meat button do?</li>
-            <li>I need vegetables, where can I find these?</li>
-          </ul>
-        </div>
-        <div class="span12">
-          <button type="submit" name="submit"
-                  class="btn btn-primary">Submit</button>
-          <button type="button" name="cancel"
-                  class="btn">Cancel</button>
-        </div>
-      </form>
+      <div class="span12">
+        <p>Hello world</p>
+      </div>
     </div><!-- /row -->
   </div><!-- /container -->
-
-
-  <!-- jQuerytools overlay container -->
-  <div id="overlay">
-    <a class="close"></a>
-    <!-- the external content is loaded inside this tag -->
-    <div class="contentWrap"></div>
-  </div>
-
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script>window.jQuery ||
@@ -103,7 +73,7 @@
   <!-- Bootstrap -->
   <script src="static/js/libs/bootstrap.min.js"></script>
   <!-- Aloha-Editor -->
-  <script src="Aloha-Editor/src/lib/aloha.js"
+  <script src="../Aloha-Editor/src/lib/aloha.js"
           data-aloha-plugins="common/ui,common/format,
                               common/highlighteditables,common/link"></script>
 
@@ -114,17 +84,6 @@
     // Make the document editable
     Aloha.ready(function() {
       Aloha.jQuery('#editable-content').aloha();
-    });
-  </script>
-  <script>
-    $("a[rel]").overlay({
-      onBeforeLoad: function() {
-        // grab wrapper element inside content
-        var wrap = this.getOverlay().find(".contentWrap");
-        // load the page specified in the trigger
-        var href = this.getTrigger().attr("href") + " div[role='main']";
-        wrap.load(href);
-      }
     });
   </script>
   <!-- end scripts-->
