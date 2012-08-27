@@ -91,7 +91,7 @@
   <div id="overlay">
     <a class="close"></a>
     <!-- the external content is loaded inside this tag -->
-    <div class="contentWrap"></div>
+    <div class="content-wrapper"></div>
   </div>
 
 
@@ -120,7 +120,7 @@
     $("a[rel]").overlay({
       onBeforeLoad: function() {
         // grab wrapper element inside content
-        var wrap = this.getOverlay().find(".contentWrap");
+        var wrap = this.getOverlay().find(".content-wrapper");
         // load the page specified in the trigger
         var href = this.getTrigger().attr("href") + " div[role='main']";
         wrap.load(href);
