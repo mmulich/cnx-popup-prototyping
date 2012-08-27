@@ -18,8 +18,10 @@
   <link href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
   <link rel="stylesheet" href="static/css/style.css">
   <link rel="stylesheet" href="static/css/custom.css">
+  <link rel="stylesheet" href="../Aloha-Editor/src/css/aloha.css" type="text/css">
 
   <script src="static/js/libs/modernizr-2.5.3.min.js"></script>
+  <script src="../Aloha-Editor/src/lib/require.js"></script>
 </head>
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top">
@@ -58,7 +60,7 @@
     <div class="row-fluid">
       <form>
         <div class="span8">
-          <textarea name="content">
+          <textarea id="editable-content" name="content">
 <h1>Meatloaf lovers rejoice</h1>
 <p>Meatloaf proident ham hock exercitation excepteur. Occaecat nostrud adipisicing bresaola, strip steak flank laborum irure eiusmod. Capicola reprehenderit culpa swine t-bone spare ribs. Quis elit ut, short loin in excepteur do non swine aliqua ground round.</p>
           </textarea>
@@ -87,10 +89,20 @@
 
   <!-- Bootstrap -->
   <script src="static/js/libs/bootstrap.min.js"></script>
+  <!-- Aloha-Editor -->
+  <script src="../Aloha-Editor/src/lib/aloha.js"
+          data-aloha-plugins="common/ui,common/format,
+                              common/highlighteditables,common/link"></script>
 
   <!-- scripts concatenated and minified via ant build script-->
   <script src="static/js/plugins.js"></script>
   <script src="static/js/script.js"></script>
+  <script>
+    // Make the document editable
+    Aloha.ready(function() {
+      Aloha.jQuery('#editable-content').aloha();
+    });
+  </script>
   <!-- end scripts-->
 
 </body>
