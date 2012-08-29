@@ -10,6 +10,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 requires = [
     'pyramid',
     'pyramid_debugtoolbar',
+    'pyramid_jinja2',
     'waitress',
     ]
 
