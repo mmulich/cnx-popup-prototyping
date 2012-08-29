@@ -2,3 +2,9 @@
 ######################
 Aloha-Editor
 oerpub.editor
+
+# Development #
+###############
+*~
+*.pyc
+*.egg-info
