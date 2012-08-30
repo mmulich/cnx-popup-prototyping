@@ -14,3 +14,8 @@ def casa(request):
 def edit(request):
     """The editor page for this application."""
     return {'title': SITE_TITLE}
+
+@view_config(route_name='metadata', renderer='metadata.jinja2')
+def metadata(request):
+    """The metadata form page for this application."""
+    return {'title': SITE_TITLE}

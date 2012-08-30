@@ -20,6 +20,7 @@ def main(global_config, **settings):
     # Views / Routes
     config.add_route('casa', '/')
     config.add_route('edit', '/edit')
+    config.add_route('metadata', '/metadata')
 
     config.scan()
     return config.make_wsgi_app()
