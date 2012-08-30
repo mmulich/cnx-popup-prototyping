@@ -1,0 +1,103 @@
+{% extends "base.jinja2" %}
+
+{% block css %}
+  <link rel="stylesheet" href="Aloha-Editor/src/css/aloha.css" type="text/css">
+{% endblock %}
+
+{% block _js %}
+  {{ super() }}
+  <script src="Aloha-Editor/src/lib/require.js"></script>
+{% endblock %}
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <a href="" class="brand">Connexions</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="dropdown">
+              <!-- Don't use th edata-toggle attr here because the
+              tools dropdown doesn't link to a tools index. -->
+              <a id="tools-selection" href="#"
+                 class="dropdown-toggle"
+                 role="button">Tools<b class="caret"></b></span>
+              <ul class="dropdown-menu" role="menu">
+                <li><a tabindex="-1" href="#">Import</a></li>
+                <li><a tabindex="-1" href="#">Preview ...</a></li>
+                <li><a tabindex="-1" href="#">Publish</a></li>
+                <li><a tabindex="-1" href="#">Sharing and Access Management</a></li>
+                <li>
+                  <a tabindex="-1" href="metadata.html"
+                     rel="#overlay">Metadata</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="/support">Support</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+  </div>
+
+{% block main %}
+  <form>
+    <div class="span8">
+      <textarea id="editable-content" name="content">
+        <h1>Meatloaf lovers rejoice</h1>
+        <p>Meatloaf proident ham hock exercitation excepteur. Occaecat nostrud adipisicing bresaola, strip steak flank laborum irure eiusmod. Capicola reprehenderit culpa swine t-bone spare ribs. Quis elit ut, short loin in excepteur do non swine aliqua ground round.</p>
+      </textarea>
+    </div>
+    <div class="span4">
+      <h3>Help info and sidebar tools go here</h3>
+      <ul>
+        <li>What type of meat is best for children?</li>
+        <li>What does the mystery meat button do?</li>
+        <li>I need vegetables, where can I find these?</li>
+      </ul>
+    </div>
+    <div class="span12">
+      <button type="submit" name="submit"
+              class="btn btn-primary">Submit</button>
+      <button type="button" name="cancel"
+              class="btn">Cancel</button>
+    </div>
+  </form>
+
+  <!-- jQuerytools overlay container -->
+  <div id="overlay">
+    <a class="close"></a>
+    <!-- the external content is loaded inside this tag -->
+    <div class="content-wrapper"></div>
+  </div>
+{% endblock %}{# END main block #}
+
+{% block js %}
+  <script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+  <!-- Aloha-Editor -->
+  <script src="/Aloha-Editor/src/lib/aloha.js"
+          data-aloha-plugins="common/ui,common/format,
+                              common/highlighteditables,common/link"></script>
+
+  <script>
+    // Make the document editable
+    Aloha.ready(function() {
+      Aloha.jQuery('#editable-content').aloha();
+    });
+  </script>
+  <script>
+    $("a[rel]").overlay({
+      onBeforeLoad: function() {
+        // grab wrapper element inside content
+        var wrap = this.getOverlay().find(".content-wrapper");
+        // load the page specified in the trigger
+        var href = this.getTrigger().attr("href") + " div[role='main']";
+        wrap.load(href);
+      }
+    });
+  </script>
+{% endblock %}
