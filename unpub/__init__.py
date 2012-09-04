@@ -8,6 +8,8 @@ def main(global_config, **settings):
     """
     config = Configurator(settings=settings)
     config.add_static_view('static', 'static', cache_max_age=3600)
+    config.add_static_view('static-bootstrap',
+                           settings['unpub.bootstrap_resource'])
     # XXX Temporary resource locations until we determine how to best
     #     distribute the aloha-editor code base.
     config.add_static_view('Aloha-Editor',
