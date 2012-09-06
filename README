@@ -1,0 +1,31 @@
+Popup Prototype
+===============
+
+
+
+Installation
+------------
+
+Create a virtual environment if you want...
+
+::
+
+    git clone https://github.com/pumazi/cnx-popup-prototyping.git
+    cd cnx-popup-prototyping
+    python setup.py develop
+
+Run
+---
+
+Pyramid comes with a built in server that has been derived from
+PasteDeploy.
+
+Run the application by chaning into the package's root. This is so
+that you have easy access to the configuration INI, otherwise you can
+run it from anywhere and just reference the INI file.
+
+::
+
+    pserve development.ini
+
+Then surf to the address output by the above command.
