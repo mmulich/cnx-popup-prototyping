@@ -27,7 +27,6 @@
   {# _js is a private block only to be used when necessary, all other
      js should be loaded at the end of the file in the 'js' block
    #}
-  <script src="/static-bootstrap/js/libs/modernizr-2.5.3.min.js"></script>
   {% endblock %}
 
   {% endblock %}{# END head block #}
@@ -54,19 +53,34 @@
     </div>
   </div>
 
+  {% block before_main %}{% endblock %}
+
   <div role="main" class="container-fluid">
     <div class="row-fluid">
       {% block main %}{% endblock %}
     </div><!-- /row -->
   </div><!-- /container -->
 
+  {% block after_main %}{% endblock %}
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script>window.jQuery ||
   document.write('<script src="/static/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
   <!-- Bootstrap -->
-  <script src="/static-bootstrap/js/bootstrap.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-transition.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-alert.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-modal.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-dropdown.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-scrollspy.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-tab.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-tooltip.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-popover.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-button.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-collapse.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-carousel.js"></script>
+  <script src="/static-bootstrap/js/bootstrap-typeahead.js"></script>
+  {# <script src="/static-bootstrap/js/bootstrap.js"></script> #}
 
   <!-- Application wide JavaScript -->
   <script src="/static/js/plugins.js"></script>
