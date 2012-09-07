@@ -17,7 +17,11 @@
        class="dropdown-toggle"
        role="button">Tools<b class="caret"></b></span>
     <ul class="dropdown-menu" role="menu">
-      <li><a tabindex="-1" href="#">Import</a></li>
+      <li>
+        <a tabindex="-1" href="#import-modal"
+           id="import-link" role="dialog"
+           data-toggle="modal">Import</a>
+      </li>
       <li><a tabindex="-1" href="#">Preview ...</a></li>
       <li><a tabindex="-1" href="#">Publish</a></li>
       <li><a tabindex="-1" href="#">Sharing and Access Management</a></li>
@@ -60,11 +64,11 @@
   <!-- Modal structure -->
   <div class="modal hide fade in" id="metadata-modal">
     <form name="metadata-form" action="metadata" method="POST">
-<div class="modal-header">
-  <button type="button" class="close"
-          data-dismiss="modal" aria-hidden="true">×</button>
-  <h3 id="modal-header-label">Edit metadata</h3>
-</div>
+      <div class="modal-header">
+        <button type="button" class="close"
+                data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="modal-header-label">Edit metadata</h3>
+      </div>
 <div class="modal-body">
   <div role="popup-content" class="span12">
       <label>Title</label>
@@ -247,10 +251,28 @@
       </span>
   </div>
 </div>
-<div class="modal-footer">
-  <button type="submit" class="btn btn-primary">Save</button>
-  <button type="button" class="btn">Cancel</button>
-</div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="button" class="btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+
+  <div class="modal hide fade in" id="import-modal">
+    <form name="metadata-form" action="import" method="POST">
+      <div class="modal-header">
+        <button type="button" class="close"
+                data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="modal-header-label">Edit metadata</h3>
+      </div>
+      <div class="modal-body">
+        <input type="file" name="upload">
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Upload</button>
+        <button type="button" class="btn">Cancel</button>
+      </div>
     </form>
   </div>
 {% endblock %}{# END after_main block #}
