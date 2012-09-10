@@ -127,6 +127,14 @@
       }
     });
   </script>
+  <script>
+    var moduleInfo;
+    $(document).ready(function(){
+      $.getJSON("./data.json", function(data){
+        moduleInfo = data;
+      });
+    });
+  </script>
   <!-- end scripts-->
 
 </body>
