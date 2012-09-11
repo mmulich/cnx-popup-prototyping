@@ -90,17 +90,6 @@
   <!-- Modal -->
   <div id="metadata-modal" class="modal hide fade in"
        style="display:none;">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-      <h3>Modal header</h3>
-    </div>
-    <div class="modal-body">
-      <p>One fine body…</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#" class="btn" data-dismiss="modal">Close</a>
-      <a href="#" class="btn btn-primary">Save changes</a>
-    </div>
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -113,6 +102,8 @@
   <script src="Aloha-Editor/src/lib/aloha.js"
           data-aloha-plugins="common/ui,common/format,
                               common/highlighteditables,common/link"></script>
+  <!-- Mustache -->
+  <script src="static/js/libs/mustache.js"></script>
 
   <!-- scripts concatenated and minified via ant build script-->
   <script src="static/js/plugins.js"></script>
@@ -128,6 +119,12 @@
     $(document).ready(function(){
       $.getJSON("./data.json", function(data){
         moduleInfo = data;
+      });
+      // Load modals with content after the page has been loaded.
+      require(['static/js/libs/mustache'], function(Mustache) {
+        $.get('metadata-modal.snippet.html', function (tmpl, status, request){
+          $("#metadata-modal").html(Mustache.render(tmpl, moduleInfo))
+        });
       });
     });
   </script>
