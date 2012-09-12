@@ -15,6 +15,10 @@
     },
     "title": "Introduction",
     "version": "ad0d6c247e0f1347364d890ec2e9fb53",
+    primary_language: "es",
+    variant_language: "",
+    subjects: ["History", "Government", "Law"],
+    keywords: ["united-states", "congress", "government", "independence",],
     "history": {
         "ad0d6c247e0f1347364d890ec2e9fb53": {
             "roles": {

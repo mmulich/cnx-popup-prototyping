@@ -18,10 +18,9 @@
   <link href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
   <link rel="stylesheet" href="static/css/style.css">
   <link rel="stylesheet" href="static/css/custom.css">
-  <link rel="stylesheet" href="Aloha-Editor/src/css/aloha.css" type="text/css">
 
   <script src="static/js/libs/modernizr-2.5.3.min.js"></script>
-  <script src="Aloha-Editor/src/lib/require.js"></script>
+  <script data-main="static/js/main" src="static/js/libs/require-jquery.js"></script>
 </head>
 <body>
   <div class="navbar navbar-inverse navbar-fixed-top">
@@ -92,42 +91,27 @@
        style="display:none;">
   </div>
 
+  <!--
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
   <script>window.jQuery ||
   document.write('<script src="static/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+  -->
+  <!-- scripts concatenated and minified via ant build script-->
+  <script src="static/js/plugins.js"></script>
 
-  <!-- Bootstrap -->
-  <script src="static/js/libs/bootstrap.min.js"></script>
+
   <!-- Aloha-Editor -->
+  <!--
   <script src="Aloha-Editor/src/lib/aloha.js"
           data-aloha-plugins="common/ui,common/format,
                               common/highlighteditables,common/link"></script>
-  <!-- Mustache -->
-  <script src="static/js/libs/mustache.js"></script>
-
-  <!-- scripts concatenated and minified via ant build script-->
-  <script src="static/js/plugins.js"></script>
-  <script src="static/js/script.js"></script>
   <script>
     // Make the document editable
     Aloha.ready(function() {
       Aloha.jQuery('#editable-content').aloha();
     });
   </script>
-  <script>
-    var moduleInfo;
-    $(document).ready(function(){
-      $.getJSON("./data.json", function(data){
-        moduleInfo = data;
-      });
-      // Load modals with content after the page has been loaded.
-      require(['static/js/libs/mustache'], function(Mustache) {
-        $.get('metadata-modal.snippet.html', function (tmpl, status, request){
-          $("#metadata-modal").html(Mustache.render(tmpl, moduleInfo))
-        });
-      });
-    });
-  </script>
+  -->
   <!-- end scripts-->
 
 </body>
